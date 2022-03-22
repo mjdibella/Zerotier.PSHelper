@@ -1,0 +1,22 @@
+Connect-Zerotier: set Zerotier apikey for session; persist key in file
+	-apitoken mandatory
+
+Disconnect-Zerotier: clear apikey from session; delete persistant file
+
+Get-ZerotierMember: returns a Zerotier member record for a specified network
+	-networkId mandatory
+	-memberId optional, all members returned if absent
+
+Set-ZerotierMember: updates Zerotier member from record objects on the pipeline
+	-name optional
+	-description optional
+	-authorized optional
+	-hidden optional
+
+Set-ZerotierLogonEvents returns list of members whose status has change from offline to online since the last time the cmdlet was executed
+	-networkId mandatory
+
+Format-ZerotierTimestamp: format Zerotier timestamp values in properties within objects on the pipeline to readable format
+	-properties mandatory, array of one or more property names to format
+	-format optional, format string to apply
+	-offset optional, timezone shift to apply in hours
